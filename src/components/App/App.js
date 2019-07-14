@@ -8,17 +8,16 @@ import Device from "../Device/Device";
 
 
 export const App = () => {
-    let url = "http://192.168.1.200:8080";
     return (
         <div>
             <Switch>
-                <Route exact path="/home" component={Home}/>
+                <Route path="/home" component={Home}/>
                 <Route exact path="/">
                     <Redirect to="/home"/>
                 </Route>
-                <Route exact path="/register" render={(props) => <Register url={url} {...props}/>}/>
-                <Route exact path="/user" render={(props) => <User url={url} {...props}/>}/>
-                <Route exact path="/devices" render={(props) => <Device url={url} {...props}/>}/>
+                <Route path="/register"  component={Register}/>
+                <Route path="/user" component={User}/>
+                <Route path="/devices" component={Device}/>
             </Switch>
         </div>
     );

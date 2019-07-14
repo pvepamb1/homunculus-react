@@ -14,7 +14,7 @@ class User extends React.Component{
 
     async handleSubmit(event){
         event.preventDefault();
-        await axios.post(this.url + "/save", this.state);
+        await axios.post(this.url + "api/users", this.state);
         this.setState({name:'', email:'', password:'', success:'Successfully submitted'});
     }
 
